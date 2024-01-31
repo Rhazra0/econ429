@@ -35,6 +35,8 @@ library("tidyverse")
 ### However, note that the tools in base R are always loaded
 
 #### YOUR TURN: install and load "sf" into R
+install.packages("sf")
+library("sf")
 
 ### Shortcut! There is a package called "pacman" the both installs (if needed) and loads R packages in one step
 ### First install it
@@ -46,6 +48,12 @@ pacman::p_load("tidyverse","sf","tmap")
 ### Note that in the above line we called the command "p_load" (load package) without having to load "pacman" into R 
 
 ##### YOUR TURN: install and/or load all the six packages 
+#"tidyverse","sf","tmap","raster","exactextractr", "fixest"
+install.packages("raster")
+install.packages("exactextractr")
+install.packages("fixest")
+install.packages("tmap")
+pacman::p_load("raster", "exactextractr", "fixest", "tmap")
 
 # 7. Getting help in R (?)
 #### the ? command provides you the documentation page where you can get specific information 
@@ -59,26 +67,27 @@ pacman::p_load("tidyverse","sf","tmap")
 ### Stack Exchange is a great resources -- typically someone has already asked a question you are looking for
 ### Nick HK - https://nickchk.com/econometrics.html has great resources ("R for Stata Users)
 ##### YOUR TURN: see how you can get help about "tmap"
-
+?tmap
 
 # 8. Getting help outside of the formal channels (from people other than the developer's)
 ### There is a lot of help online on how to particular tasks in R or packages. Google is your best friend!
 #### e.g. How to map points data in R?
 ####      How to map points data in R using tmap?
 
-
 # 9. Reading and saving different data formats in R - RDS (base) & csv (need tidyverse) 
 ## Read and Save in RDS (base R)
-eth_zonepop_2022_fromRDS <- readRDS("ethiopia_population_by_zone_2022.rds")
-#saveRDS(eth_zonepop_2022_fromRDS, "ethiopia_population_by_zone_2022_new.rds")
+install.packages("readr")
+library("readr")
+eth_zonepop_2022_fromRDS <- readRDS("~/GitHub/econ429/lab1/lab1/ethiopia_population_by_zone_2022.rds")
+saveRDS(eth_zonepop_2022_fromRDS, "~/GitHub/econ429/lab1/lab1/ethiopia_population_by_zone_2022.rds")
 
 ## Read and save/write CSV (readr from tidyverse)
-eth_zonepop_2022 <- read_csv("ethiopia_population_by_zone_2022.csv")
-#write_csv(eth_zonepop_2022, "eth_pop_zone_2022_new.csv")
+eth_zonepop_2022 <- read_csv("~/GitHub/econ429/lab1/lab1/ethiopia_population_by_zone_2022.csv")
+write_csv(eth_zonepop_2022, "~/GitHub/econ429/lab1/lab1/ethiopia_population_by_zone_2022.csv")
 
 ## Read and write dta (stata) files
-eth_fulldemo <- read_dta("ethiopia_fulldemography_by_zone_2022.dta")
-#write_dta(eth_fulldemo, "ethiopia_full_demo_new.dta")
+eth_fulldemo <- read_dta("~/GitHub/econ429/lab1/lab1/ethiopia_fulldemography_by_zone_2022.dta")
+write_dta(eth_fulldemo,"~/GitHub/econ429/lab1/lab1/ethiopia_fulldemography_by_zone_2022.dta")
 
 # 10. Basic operations (piping %>%, select, rename, filter, mutate)
 ## first let's fix a conflict in command names from different packages 

@@ -1,93 +1,93 @@
-﻿admin2Name_en,admin2Pcode,admin1Name_en,admin1Pcode,admin0Name_en,admin0Pcode,pop_total,pop_male,pop_female
-North Western,ET0101,Tigray,ET01,Ethiopia,ET,"902,719","446,866","455,853"
-Central,ET0102,Tigray,ET01,Ethiopia,ET,"1,475,184","724,860","750,324"
-Eastern,ET0103,Tigray,ET01,Ethiopia,ET,"1,273,918","607,861","666,057"
-Southern,ET0104,Tigray,ET01,Ethiopia,ET,"830,878","407,879","422,999"
-Western,ET0105,Tigray,ET01,Ethiopia,ET,"525,923","271,329","254,594"
-South Eastern,ET0106,Tigray,ET01,Ethiopia,ET,"454,692","225,782","228,910"
-Mekelle,ET0107,Tigray,ET01,Ethiopia,ET,"186,272","93,223","93,049"
-Awsi /Zone 1,ET0201,Afar,ET02,Ethiopia,ET,"702,893","376,566","326,327"
-Kilbati /Zone2,ET0202,Afar,ET02,Ethiopia,ET,"490,191","267,116","223,075"
-Gabi /Zone 3,ET0203,Afar,ET02,Ethiopia,ET,"296,168","159,314","136,854"
-Fanti /Zone 4,ET0204,Afar,ET02,Ethiopia,ET,"287,301","160,048","127,253"
-Hari /Zone 5,ET0205,Afar,ET02,Ethiopia,ET,"213,443","120,539","92,904"
-North Gondar,ET0301,Amhara,ET03,Ethiopia,ET,"911,718","455,721","455,997"
-South Gondar,ET0302,Amhara,ET03,Ethiopia,ET,"2,719,447","1,374,486","1,344,960"
-North Wello,ET0303,Amhara,ET03,Ethiopia,ET,"1,847,740","925,941","921,799"
-South Wello,ET0304,Amhara,ET03,Ethiopia,ET,"3,371,704","1,671,512","1,700,192"
-North Shewa (AM),ET0305,Amhara,ET03,Ethiopia,ET,"2,497,052","1,261,070","1,235,981"
-East Gojam,ET0306,Amhara,ET03,Ethiopia,ET,"2,902,200","1,437,965","1,464,235"
-West Gojam,ET0307,Amhara,ET03,Ethiopia,ET,"2,760,852","1,384,433","1,376,419"
-Wag Hamra,ET0308,Amhara,ET03,Ethiopia,ET,"558,306","278,811","279,495"
-Awi,ET0309,Amhara,ET03,Ethiopia,ET,"1,641,176","822,818","818,357"
-Oromia,ET0310,Amhara,ET03,Ethiopia,ET,"550,843","273,756","277,087"
-Central Gondar,ET0311,Amhara,ET03,Ethiopia,ET,"2,391,579","1,201,662","1,189,917"
-West Gondar,ET0312,Amhara,ET03,Ethiopia,ET,"377,898","201,660","176,238"
-West Wellega,ET0401,Oromia,ET04,Ethiopia,ET,"1,791,336","885,317","906,019"
-East Wellega,ET0402,Oromia,ET04,Ethiopia,ET,"1,870,321","929,877","940,444"
-Ilu Aba Bora,ET0403,Oromia,ET04,Ethiopia,ET,"1,004,400","499,195","505,205"
-Jimma,ET0404,Oromia,ET04,Ethiopia,ET,"4,197,373","2,097,787","2,099,586"
-West Shewa,ET0405,Oromia,ET04,Ethiopia,ET,"3,099,027","1,539,647","1,559,380"
-North Shewa (OR),ET0406,Oromia,ET04,Ethiopia,ET,"1,662,806","827,191","835,615"
-East Shewa,ET0407,Oromia,ET04,Ethiopia,ET,"2,108,044","1,061,727","1,046,317"
-Arsi,ET0408,Oromia,ET04,Ethiopia,ET,"3,766,075","1,879,386","1,886,689"
-West Hararge,ET0409,Oromia,ET04,Ethiopia,ET,"2,789,190","1,422,626","1,366,564"
-East Hararge,ET0410,Oromia,ET04,Ethiopia,ET,"3,770,508","1,898,496","1,872,012"
-Bale,ET0411,Oromia,ET04,Ethiopia,ET,"1,039,526","525,893","513,633"
-Borena,ET0412,Oromia,ET04,Ethiopia,ET,"626,098","315,904","310,194"
-South West Shewa,ET0413,Oromia,ET04,Ethiopia,ET,"1,311,400","657,428","653,972"
-Guji,ET0414,Oromia,ET04,Ethiopia,ET,"1,655,947","829,777","826,170"
-West Guji,ET0415,Oromia,ET04,Ethiopia,ET,"1,337,237","667,974","669,263"
-Buno Bedele,ET0416,Oromia,ET04,Ethiopia,ET,"762,739","381,720","381,018"
-West Arsi,ET0417,Oromia,ET04,Ethiopia,ET,"2,725,861","1,343,379","1,382,483"
-Kelem Wellega,ET0418,Oromia,ET04,Ethiopia,ET,"1,184,069","594,125","589,944"
-Horo Gudru Wellega,ET0419,Oromia,ET04,Ethiopia,ET,"780,423","389,189","391,234"
-Finfine Special,ET0420,Oromia,ET04,Ethiopia,ET,"1,085,361","544,867","540,494"
-East Bale,ET0421,Oromia,ET04,Ethiopia,ET,"507,261","256,846","250,415"
-Siti,ET0501,Somali,ET05,Ethiopia,ET,"670,906","348,872","322,034"
-Fafan,ET0502,Somali,ET05,Ethiopia,ET,"1,114,892","585,371","529,521"
-Jarar,ET0503,Somali,ET05,Ethiopia,ET,"806,765","431,994","374,771"
-Erer,ET0504,Somali,ET05,Ethiopia,ET,"405,115","218,408","186,707"
-Korahe,ET0505,Somali,ET05,Ethiopia,ET,"526,494","287,308","239,186"
-Shabelle,ET0506,Somali,ET05,Ethiopia,ET,"683,832","364,475","319,357"
-Doolo,ET0507,Somali,ET05,Ethiopia,ET,"494,682","270,358","224,324"
-Afder,ET0508,Somali,ET05,Ethiopia,ET,"648,880","351,127","297,754"
-Liban,ET0509,Somali,ET05,Ethiopia,ET,"518,307","275,615","242,692"
-Nogob,ET0510,Somali,ET05,Ethiopia,ET,"172,402","92,487","79,916"
-Daawa,ET0511,Somali,ET05,Ethiopia,ET,"312,728","164,833","147,895"
-Metekel,ET0602,Benishangul Gumz,ET06,Ethiopia,ET,"501,585","252,323","249,262"
-Assosa,ET0603,Benishangul Gumz,ET06,Ethiopia,ET,"505,199","257,785","247,414"
-Kamashi,ET0604,Benishangul Gumz,ET06,Ethiopia,ET,"110,114","56,897","53,218"
-Mao Komo Special,ET0605,Benishangul Gumz,ET06,Ethiopia,ET,"71,099","35,566","35,533"
-Guraghe,ET0701,SNNP,ET07,Ethiopia,ET,"1,642,049","796,092","845,956"
-Hadiya,ET0702,SNNP,ET07,Ethiopia,ET,"1,942,784","961,801","980,983"
-Kembata Tembaro,ET0703,SNNP,ET07,Ethiopia,ET,"989,687","486,112","503,575"
-Gedeo,ET0705,SNNP,ET07,Ethiopia,ET,"1,186,458","592,830","593,629"
-Wolayita,ET0706,SNNP,ET07,Ethiopia,ET,"2,311,103","1,134,910","1,176,193"
-South Omo,ET0707,SNNP,ET07,Ethiopia,ET,"651,952","326,861","325,091"
-Gamo,ET0710,SNNP,ET07,Ethiopia,ET,"1,678,008","831,462","846,546"
-Alle,ET0712,SNNP,ET07,Ethiopia,ET,"53,450","26,181","27,269"
-Konso,ET0713,SNNP,ET07,Ethiopia,ET,"213,722","104,346","109,376"
-Halaba,ET0714,SNNP,ET07,Ethiopia,ET,"241,565","121,402","120,163"
-Gofa,ET0715,SNNP,ET07,Ethiopia,ET,"635,948","316,662","319,286"
-Basketo,ET0716,SNNP,ET07,Ethiopia,ET,"79,236","39,609","39,627"
-Siltie,ET0720,SNNP,ET07,Ethiopia,ET,"1,076,198","524,613","551,585"
-Amaro,ET0721,SNNP,ET07,Ethiopia,ET,"201,929","101,793","100,136"
-Burji,ET0722,SNNP,ET07,Ethiopia,ET,"79,337","38,413","40,924"
-Derashe,ET0723,SNNP,ET07,Ethiopia,ET,"199,634","97,369","102,265"
-Yem Special,ET0724,SNNP,ET07,Ethiopia,ET,"67,586","33,711","33,875"
-Sheka,ET1101,South West Ethiopia,ET11,Ethiopia,ET,"333,699","168,620","165,078"
-Kefa,ET1102,South West Ethiopia,ET11,Ethiopia,ET,"1,232,450","605,891","626,559"
-Bench Sheko,ET1103,South West Ethiopia,ET11,Ethiopia,ET,"676,928","334,023","342,905"
-Dawuro,ET1104,South West Ethiopia,ET11,Ethiopia,ET,"830,838","424,478","406,360"
-Mirab Omo,ET1105,South West Ethiopia,ET11,Ethiopia,ET,"252,659","124,303","128,356"
-Konta Special,ET1106,South West Ethiopia,ET11,Ethiopia,ET,"126,874","61,944","64,930"
-Nuwer,ET1201,Gambela,ET12,Ethiopia,ET,"163,821","88,109","75,712"
-Agnewak,ET1202,Gambela,ET12,Ethiopia,ET,"187,268","95,782","91,486"
-Majang,ET1203,Gambela,ET12,Ethiopia,ET,"86,891","44,893","41,998"
-Itang Special woreda,ET1204,Gambela,ET12,Ethiopia,ET,"54,022","27,218","26,804"
-Harari,ET1301,Harari,ET13,Ethiopia,ET,"270,000","136,000","134,000"
-Region 14,ET1401,Addis Ababa,ET14,Ethiopia,ET,"3,773,999","1,781,999","1,992,000"
-Dire Dawa urban,ET1501,Dire Dawa,ET15,Ethiopia,ET,"328,357","165,929","162,428"
-Dire Dawa rural,ET1502,Dire Dawa,ET15,Ethiopia,ET,"192,643","97,071","95,572"
-Sidama,ET1600,Sidama,ET16,Ethiopia,ET,"3,987,457","2,005,940","1,981,517"
+admin2Name_en,admin2Pcode,admin1Name_en,admin1Pcode,admin0Name_en,admin0Pcode,pop_total,pop_male,pop_female
+North Western,ET0101,Tigray,ET01,Ethiopia,ET,902719,446866,455853
+Central,ET0102,Tigray,ET01,Ethiopia,ET,1475184,724860,750324
+Eastern,ET0103,Tigray,ET01,Ethiopia,ET,1273918,607861,666057
+Southern,ET0104,Tigray,ET01,Ethiopia,ET,830878,407879,422999
+Western,ET0105,Tigray,ET01,Ethiopia,ET,525923,271329,254594
+South Eastern,ET0106,Tigray,ET01,Ethiopia,ET,454692,225782,228910
+Mekelle,ET0107,Tigray,ET01,Ethiopia,ET,186272,93223,93049
+Awsi /Zone 1,ET0201,Afar,ET02,Ethiopia,ET,702893,376566,326327
+Kilbati /Zone2,ET0202,Afar,ET02,Ethiopia,ET,490191,267116,223075
+Gabi /Zone 3,ET0203,Afar,ET02,Ethiopia,ET,296168,159314,136854
+Fanti /Zone 4,ET0204,Afar,ET02,Ethiopia,ET,287301,160048,127253
+Hari /Zone 5,ET0205,Afar,ET02,Ethiopia,ET,213443,120539,92904
+North Gondar,ET0301,Amhara,ET03,Ethiopia,ET,911718,455721,455997
+South Gondar,ET0302,Amhara,ET03,Ethiopia,ET,2719447,1374486,1344960
+North Wello,ET0303,Amhara,ET03,Ethiopia,ET,1847740,925941,921799
+South Wello,ET0304,Amhara,ET03,Ethiopia,ET,3371704,1671512,1700192
+North Shewa (AM),ET0305,Amhara,ET03,Ethiopia,ET,2497052,1261070,1235981
+East Gojam,ET0306,Amhara,ET03,Ethiopia,ET,2902200,1437965,1464235
+West Gojam,ET0307,Amhara,ET03,Ethiopia,ET,2760852,1384433,1376419
+Wag Hamra,ET0308,Amhara,ET03,Ethiopia,ET,558306,278811,279495
+Awi,ET0309,Amhara,ET03,Ethiopia,ET,1641176,822818,818357
+Oromia,ET0310,Amhara,ET03,Ethiopia,ET,550843,273756,277087
+Central Gondar,ET0311,Amhara,ET03,Ethiopia,ET,2391579,1201662,1189917
+West Gondar,ET0312,Amhara,ET03,Ethiopia,ET,377898,201660,176238
+West Wellega,ET0401,Oromia,ET04,Ethiopia,ET,1791336,885317,906019
+East Wellega,ET0402,Oromia,ET04,Ethiopia,ET,1870321,929877,940444
+Ilu Aba Bora,ET0403,Oromia,ET04,Ethiopia,ET,1004400,499195,505205
+Jimma,ET0404,Oromia,ET04,Ethiopia,ET,4197373,2097787,2099586
+West Shewa,ET0405,Oromia,ET04,Ethiopia,ET,3099027,1539647,1559380
+North Shewa (OR),ET0406,Oromia,ET04,Ethiopia,ET,1662806,827191,835615
+East Shewa,ET0407,Oromia,ET04,Ethiopia,ET,2108044,1061727,1046317
+Arsi,ET0408,Oromia,ET04,Ethiopia,ET,3766075,1879386,1886689
+West Hararge,ET0409,Oromia,ET04,Ethiopia,ET,2789190,1422626,1366564
+East Hararge,ET0410,Oromia,ET04,Ethiopia,ET,3770508,1898496,1872012
+Bale,ET0411,Oromia,ET04,Ethiopia,ET,1039526,525893,513633
+Borena,ET0412,Oromia,ET04,Ethiopia,ET,626098,315904,310194
+South West Shewa,ET0413,Oromia,ET04,Ethiopia,ET,1311400,657428,653972
+Guji,ET0414,Oromia,ET04,Ethiopia,ET,1655947,829777,826170
+West Guji,ET0415,Oromia,ET04,Ethiopia,ET,1337237,667974,669263
+Buno Bedele,ET0416,Oromia,ET04,Ethiopia,ET,762739,381720,381018
+West Arsi,ET0417,Oromia,ET04,Ethiopia,ET,2725861,1343379,1382483
+Kelem Wellega,ET0418,Oromia,ET04,Ethiopia,ET,1184069,594125,589944
+Horo Gudru Wellega,ET0419,Oromia,ET04,Ethiopia,ET,780423,389189,391234
+Finfine Special,ET0420,Oromia,ET04,Ethiopia,ET,1085361,544867,540494
+East Bale,ET0421,Oromia,ET04,Ethiopia,ET,507261,256846,250415
+Siti,ET0501,Somali,ET05,Ethiopia,ET,670906,348872,322034
+Fafan,ET0502,Somali,ET05,Ethiopia,ET,1114892,585371,529521
+Jarar,ET0503,Somali,ET05,Ethiopia,ET,806765,431994,374771
+Erer,ET0504,Somali,ET05,Ethiopia,ET,405115,218408,186707
+Korahe,ET0505,Somali,ET05,Ethiopia,ET,526494,287308,239186
+Shabelle,ET0506,Somali,ET05,Ethiopia,ET,683832,364475,319357
+Doolo,ET0507,Somali,ET05,Ethiopia,ET,494682,270358,224324
+Afder,ET0508,Somali,ET05,Ethiopia,ET,648880,351127,297754
+Liban,ET0509,Somali,ET05,Ethiopia,ET,518307,275615,242692
+Nogob,ET0510,Somali,ET05,Ethiopia,ET,172402,92487,79916
+Daawa,ET0511,Somali,ET05,Ethiopia,ET,312728,164833,147895
+Metekel,ET0602,Benishangul Gumz,ET06,Ethiopia,ET,501585,252323,249262
+Assosa,ET0603,Benishangul Gumz,ET06,Ethiopia,ET,505199,257785,247414
+Kamashi,ET0604,Benishangul Gumz,ET06,Ethiopia,ET,110114,56897,53218
+Mao Komo Special,ET0605,Benishangul Gumz,ET06,Ethiopia,ET,71099,35566,35533
+Guraghe,ET0701,SNNP,ET07,Ethiopia,ET,1642049,796092,845956
+Hadiya,ET0702,SNNP,ET07,Ethiopia,ET,1942784,961801,980983
+Kembata Tembaro,ET0703,SNNP,ET07,Ethiopia,ET,989687,486112,503575
+Gedeo,ET0705,SNNP,ET07,Ethiopia,ET,1186458,592830,593629
+Wolayita,ET0706,SNNP,ET07,Ethiopia,ET,2311103,1134910,1176193
+South Omo,ET0707,SNNP,ET07,Ethiopia,ET,651952,326861,325091
+Gamo,ET0710,SNNP,ET07,Ethiopia,ET,1678008,831462,846546
+Alle,ET0712,SNNP,ET07,Ethiopia,ET,53450,26181,27269
+Konso,ET0713,SNNP,ET07,Ethiopia,ET,213722,104346,109376
+Halaba,ET0714,SNNP,ET07,Ethiopia,ET,241565,121402,120163
+Gofa,ET0715,SNNP,ET07,Ethiopia,ET,635948,316662,319286
+Basketo,ET0716,SNNP,ET07,Ethiopia,ET,79236,39609,39627
+Siltie,ET0720,SNNP,ET07,Ethiopia,ET,1076198,524613,551585
+Amaro,ET0721,SNNP,ET07,Ethiopia,ET,201929,101793,100136
+Burji,ET0722,SNNP,ET07,Ethiopia,ET,79337,38413,40924
+Derashe,ET0723,SNNP,ET07,Ethiopia,ET,199634,97369,102265
+Yem Special,ET0724,SNNP,ET07,Ethiopia,ET,67586,33711,33875
+Sheka,ET1101,South West Ethiopia,ET11,Ethiopia,ET,333699,168620,165078
+Kefa,ET1102,South West Ethiopia,ET11,Ethiopia,ET,1232450,605891,626559
+Bench Sheko,ET1103,South West Ethiopia,ET11,Ethiopia,ET,676928,334023,342905
+Dawuro,ET1104,South West Ethiopia,ET11,Ethiopia,ET,830838,424478,406360
+Mirab Omo,ET1105,South West Ethiopia,ET11,Ethiopia,ET,252659,124303,128356
+Konta Special,ET1106,South West Ethiopia,ET11,Ethiopia,ET,126874,61944,64930
+Nuwer,ET1201,Gambela,ET12,Ethiopia,ET,163821,88109,75712
+Agnewak,ET1202,Gambela,ET12,Ethiopia,ET,187268,95782,91486
+Majang,ET1203,Gambela,ET12,Ethiopia,ET,86891,44893,41998
+Itang Special woreda,ET1204,Gambela,ET12,Ethiopia,ET,54022,27218,26804
+Harari,ET1301,Harari,ET13,Ethiopia,ET,270000,136000,134000
+Region 14,ET1401,Addis Ababa,ET14,Ethiopia,ET,3773999,1781999,1992000
+Dire Dawa urban,ET1501,Dire Dawa,ET15,Ethiopia,ET,328357,165929,162428
+Dire Dawa rural,ET1502,Dire Dawa,ET15,Ethiopia,ET,192643,97071,95572
+Sidama,ET1600,Sidama,ET16,Ethiopia,ET,3987457,2005940,1981517
