@@ -92,6 +92,9 @@ write_dta(eth_fulldemo,"~/GitHub/econ429/lab1/lab1/ethiopia_fulldemography_by_zo
 # 10. Basic operations (piping %>%, select, rename, filter, mutate)
 ## first let's fix a conflict in command names from different packages 
 select <- dplyr::select
+rename <- dplyr::rename
+filter <- dplyr::filter
+mutate <- dplyr::mutate
 
 ### piping (%>%) :   chains different commands (take this and then do that)
 ### select : subsets the data columns (variables) 
@@ -100,24 +103,29 @@ select <- dplyr::select
 
 ## Let's take the zone population data and then select only the columns we need and rename the variables 
 
-ethzonepop <- eth_zonepop_2022 %>% 
-  select(admin1Name_en,admin2Name_en,admin2Pcode,pop_total,pop_male,pop_female) %>% 
+ethzonepop <- eth_zonepop_2022 |>
+  select(admin1Name_en,admin2Name_en,admin2Pcode,pop_total,pop_male,pop_female)|>
   rename(region_name=admin1Name_en,zone_name=admin2Name_en,zone_code=admin2Pcode)  
 
 ## Let's generate a dataset that has the sex ratio and keep only the data for the Oromia region only
-sexratio_oromia <- ethzonepop %>%  mutate(sexrat=pop_male/pop_female) %>% filter(region_name=="Oromia")
+
+sexratio_oromia <- ethzonepop |> mutate(sexrat=pop_male/pop_female) |> filter(region_name=="Oromia")
 
 #### YOUR TURN: generate a dataset containing columns with only the zonename and female share of the puplation for only for zone in 
 ####            in the "Somali" region
+
+somalizonepop <- ethzonepop |>
+  select(region_name, zone_name,pop_female)|>
+  filter(region_name == "Somali")
 
 # 11. Reading/Importing Geospatial datasets 
 ### Geospatial datasets can be stored in various format. The common format is a "shapefile". However, once you have imported the shapefile
 ### into R, you can save it as an RDS file  
 
 #### Reading a map in a shapefile format
-zonebound <-  st_read("eth_admbnda_adm2_csa_bofedb_2021.shp") 
+zonebound <-  st_read("~/GitHub/econ429/lab1/lab1/eth_admbnda_adm2_csa_bofedb_2021.shp") 
 #### Reading a map in an RDS format (its like any other dataset)
-roads <- readRDS("ethiopia_major_roads.rds")
+roads <- readRDS("~/GitHub/econ429/lab1/lab1/ethiopia_major_roads.rds")
 #### Importing a raster dataset 
 ### Let's download the data on malaria mortality for Ethiopia from the Malaria Atlas project and add it to "lab1" folder
 ### https://malariaatlas.org/
