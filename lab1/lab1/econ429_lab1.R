@@ -1,6 +1,5 @@
 
-
-                        # ECON-429 - Lab 1 -  Setting up, Importing, Manipulating and Mapping Data in R
+# ECON-429 - Lab 1 -  Setting up, Importing, Manipulating and Mapping Data in R
 
 # 1. Create a folder on your laptop named "econ429labs"
 # 2. Download the folder from Moodle with example datasets for todays lab ("lab1"), and add it to the folder you created above
@@ -11,7 +10,7 @@
 ## Creating objects 
 x <- 3
 x <- "Texas"
-z <- c("apple", "orange")
+z <- c("apple", "pink")
 z
 w <- list(x, y)
 # Find an element of z (R is a vector based system)
@@ -19,7 +18,7 @@ z2 <- z[2]
 w2 <- w[2]
 
 # 5. Set the working directory (default folder) in this R document to be lab1 
-setwd("/Users/mgebresilasse/Dropbox (Amherst College)/Courses/202324_Spring/Econ429/econ429labs/lab1")
+#setwd("/Users/mgebresilasse/Dropbox (Amherst College)/Courses/202324_Spring/Econ429/econ429labs/lab1")
 
 # 6. Installing and loading key packages in R
 ## In this course, we will be using six key packages in R: "tidyverse","sf","tmap","raster","exactextractr", "fixest"
