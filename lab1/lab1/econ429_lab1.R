@@ -124,6 +124,7 @@ somalizonepop <- ethzonepop |>
 
 #### Reading a map in a shapefile format
 zonebound <-  st_read("~/GitHub/econ429/lab1/lab1/eth_admbnda_adm2_csa_bofedb_2021.shp") 
+saveRDS(zonebound, "~/GitHub/econ429/lab1/lab1/eth_admbnda_adm2_csa_bofedb_2021.rds") 
 #### Reading a map in an RDS format (its like any other dataset)
 roads <- readRDS("~/GitHub/econ429/lab1/lab1/ethiopia_major_roads.rds")
 #### Importing a raster dataset 
