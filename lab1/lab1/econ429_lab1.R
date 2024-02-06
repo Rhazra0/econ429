@@ -12,7 +12,7 @@ x <- 3
 x <- "Texas"
 z <- c("apple", "pink")
 z
-w <- list(x, y)
+w <- list(x, z)
 # Find an element of z (R is a vector based system)
 z2 <- z[2]
 w2 <- w[2]
@@ -86,6 +86,8 @@ eth_zonepop_2022 <- read_csv("~/GitHub/econ429/lab1/lab1/ethiopia_population_by_
 write_csv(eth_zonepop_2022, "~/GitHub/econ429/lab1/lab1/ethiopia_population_by_zone_2022.csv")
 
 ## Read and write dta (stata) files
+install.packages("haven")
+library("haven")
 eth_fulldemo <- read_dta("~/GitHub/econ429/lab1/lab1/ethiopia_fulldemography_by_zone_2022.dta")
 write_dta(eth_fulldemo,"~/GitHub/econ429/lab1/lab1/ethiopia_fulldemography_by_zone_2022.dta")
 
@@ -130,69 +132,77 @@ roads <- readRDS("~/GitHub/econ429/lab1/lab1/ethiopia_major_roads.rds")
 #### Importing a raster dataset 
 ### Let's download the data on malaria mortality for Ethiopia from the Malaria Atlas project and add it to "lab1" folder
 ### https://malariaatlas.org/
-
-malmort2020 <- raster("./malaria/202206_Global_Pf_Mortality_Rate_ETH_2020.tiff")
+library("raster")
+malmort2020 <- raster("./lab1/lab1/202206_Global_Pf_Mortality_Rate_ETH_2020.tiff")
 
 #### Writing to a shapefile 
 #st_write(roads, "roads_new.shp")
 
 ### YOUR TURN: (1) import the hospital data in the lab1 folder and save it as "hospitals" 
-          
+hospitals <- readRDS("~/GitHub/econ429/lab1/lab1/ethiopia_location_of_hospitals_2023.rds")
 # 12. Maping geospatial datasets (using various commands in"tmap")
 
 ## tmap has two modes ("view" and "plot"). If you use "plot", it generates plot of the map that you can easily save to your folder
 ## if you want to explore the data interactively, the "view" mode would be better 
-tmap_mode("plot")
+library("tmap")
+tmap_mode("plot") #plot is quicker 
 
 ## Mapping polygon/borders (tm_borders)
 tm_shape(zonebound) + tm_borders()
 
 # Let's swith back to the "view" mode
-tmap_mode("view")
-tm_shape(zonebound) + tm_borders()
+tmap_mode("view") 
+tm_shape(zonebound) + tm_borders() #first part notes the shape  (polygon) we want to consider. next part depends on data type
 
 ## Mapping lines (tm_lines)
-tm_shape(roads) + tm_lines()
+tm_shape(roads) + tm_lines()#lines goes with road. borders goes with shape
 
 ## Mapping points (tm_dots) (in blue)
-tm_shape(hospitals) + tm_dots("blue")
+tm_shape(hospitals) + tm_dots("pink")
 
 ## Mapping multiple maps into one (just add them!). For instance, to show the zone boundaries and roads together 
-tm_shape(zonebound) + tm_borders() + tm_shape(roads) + tm_lines("red")
+tm_shape(zonebound) + tm_borders("pink") + tm_shape(roads) + tm_lines("purple")
 
 ## Mapping rasters 
-tm_shape(malmort2020) + tm_raster()
-tm_shape(malmort2020) + tm_raster(style="quantile",n=5)
+tm_shape(malmort2020) + tm_raster() 
+tm_shape(malmort2020) + tm_raster(title = "Legend", style="quantile",n=5) #without quantiles, all are one color
 
 #### YOUR TURN: (1) map the zone borders in black, roads in purple and hospitals in blue all together
 ####            (2) map the the location of hospitals and the malaria mortality rate 
+
+#(1)
+tm_shape(zonebound) + tm_borders("black") + tm_shape(roads) + tm_lines("purple") + tm_shape(hospitals) + tm_dots("blue")
 
 # 13. Customization of plots 
 ## The help documentation and vignettes are going to be key for you to learn how to customize the maps as needed
 
 # 14. You do all the operations with the geospatial datsets as we did above
 ### Suppose we only want to plot the zone boundaries and hospitals and roads in "Amhara" region
-tm_shape(hospitals %>% filter(regname21=="Amhara")) + tm_dots("blue") 
+tm_shape(hospitals %>% filter(regname21=="Amhara")) + tm_dots("pink") 
 
 # 15. Merging Data (left_join, right_join, inner_join, full_join)
 ## Suppose we want to generate a map of the distribution of population of children under 4 at the zone level
 
-zonepopunder4 <- read_xlsx("ethiopia_populationunder4_by_zone_2022.xlsx")  
+zonepopunder4 <- readxl::read_xlsx("~/GitHub/econ429/lab1/lab1/ethiopia_populationunder4_by_zone_2022.xlsx")  
 
 # Let's merge in the data on popunder 4 - each zone is uniquely identified here by "admin2Pcode" which we had renamed zone_code
 zonebound_withpop <- zonebound %>% 
-    left_join(zonepopunder4,by=c("ADM2_PCODE"="admin2Pcode"))
+    left_join(zonepopunder4,by=c("ADM2_PCODE"="admin2Pcode"))#only want to merge the admin code column, by = c(...) lets us merge particular columns
 
 #### you can subset to only the variables you want to merge in and combine select and rename as well
 zonebound_withpop <- zonebound %>% 
-  left_join(zonepopunder4 %>% select(ADM2_PCODE=admin2Pcode,popunder4),by=c("ADM2_PCODE"))
+  left_join(zonepopunder4 %>% select(ADM2_PCODE=admin2Pcode,popunder4),by=c("ADM2_PCODE"))#inner_join keeps elements of both, right_join lets you keep all of zonebound
 
-#### now plot the distribution of popunder4 (tm_fill)
-tm_shape(zonebound_withpop) + tm_fill("popunder4")
+###If i want to make a shape file just a data frame with no spatial data
+###zone_tibb <- zonebound |> tibble()
+
+
+###now plot the distribution of popunder4 (tm_fill)
+tm_shape(zonebound_withpop) + tm_fill("popunder4", style = "quantile", n = 4) #customized to include quartiles
 
 # 16. Saving your maps as images 
 newmap <- tm_shape(zonebound_withpop) + tm_fill("popunder4")
-#tmap_save(newmap,"map_popunder4_zone.png")
+tmap_save(newmap,"map_popunder4_zone.png")
 
 
 # 17. Let's put all of this together. 
