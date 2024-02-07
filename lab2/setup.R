@@ -1,0 +1,10 @@
+# Check if pacman is installed, and if not an empty string is returned and we proceed to install it.
+if (system.file(package='pacman') == '') install.packages("pacman")
+pacman::p_load("tidyverse")
+pacman::p_load("sf")
+pacman::p_load("tmap")
+pacman::p_load("raster")
+pacman::p_load("exactextractr")
+pacman::p_load("fixest")
+pacman::p_load("haven")
+pacman::p_load("readxl")

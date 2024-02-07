@@ -45,6 +45,7 @@ install.packages("pacman")
 ### After installing it once, then all you need to do for any new R project is  
 pacman::p_load("tidyverse","sf","tmap")
 
+
 ### Note that in the above line we called the command "p_load" (load package) without having to load "pacman" into R 
 
 ##### YOUR TURN: install and/or load all the six packages 
@@ -113,6 +114,7 @@ ethzonepop <- eth_zonepop_2022 |>
 
 sexratio_oromia <- ethzonepop |> mutate(sexrat=pop_male/pop_female) |> filter(region_name=="Oromia")
 
+
 #### YOUR TURN: generate a dataset containing columns with only the zonename and female share of the puplation for only for zone in 
 ####            in the "Somali" region
 
@@ -125,7 +127,7 @@ somalizonepop <- ethzonepop |>
 ### into R, you can save it as an RDS file  
 
 #### Reading a map in a shapefile format
-zonebound <-  st_read("~/GitHub/econ429/lab1/lab1/eth_admbnda_adm2_csa_bofedb_2021.shp") 
+zonebound <-  sf::st_read("~/GitHub/econ429/lab1/lab1/eth_admbnda_adm2_csa_bofedb_2021.shp") 
 saveRDS(zonebound, "~/GitHub/econ429/lab1/lab1/eth_admbnda_adm2_csa_bofedb_2021.rds") 
 #### Reading a map in an RDS format (its like any other dataset)
 roads <- readRDS("~/GitHub/econ429/lab1/lab1/ethiopia_major_roads.rds")
