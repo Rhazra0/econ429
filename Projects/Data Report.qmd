@@ -1,0 +1,117 @@
+---
+title: "Data Mapping Report"
+author: "Rhine Hazra"
+format: pdf
+editor: visual
+---
+
+## India's Cold Chain: a case study of power grid stability and cold storage capacity in India's wheat markets
+
+Despite a record wheat harvest this year, India has made headlines by enacting two significant export bans: first on wheat last year following a drop in output, and more recently on non-basmati white rice. While the export bans dampen India's potential to capitalize on the spike in global wheat prices triggered by the disruption in Ukraine, they also highlight the importance of building robust domestic infrastructure to manage food security effectively. India continues to suffer significant post-harvest losses (PHLs) for perishables due to inadequate cold storage infrastructure. These losses are estimated to be around 25-30%, which translates to massive economic and nutritional losses.
+
+For context, Indian markets (mandis) have a decades-long network of Agricultural Produce Market Committees (APMCs) established to regulate the buying and selling of agricultural produce. In an effort to diminish the middlemen costs and information asymmetry, trading networks (ETNs) like the National Agricultural Market (e-NAM) are on the rise.
+
+Notably, e-NAM uses warehouses and cold storage as market yards to facilitate warehouse-based trading. Thus, if an Indian state's e-NAM participation could act as a proxy for power grid stability and the adoption of technology in the local wheat markets, we could treat this like a natural experiment on the efficacy of digital networks and APMC regulation on evolving India's cold storage capacity.
+
+## Spatial Distributions
+
+```{r}
+#| echo: false
+#| include: false
+#reading the packages
+pacman::p_load(tidyverse, sf, tmap, haven, readxl, raster, exactextractr, fixest)
+library(readr)
+library(knitr)
+
+tmap_mode("view")
+```
+
+```{r}
+#| echo: false
+#| include: false
+# 1. Getting India's shape file data
+indiabound <- st_read("geoADM1/geoBoundaries-IND-ADM1.shp")
+
+#tm_shape(indiabound) + tm_borders()
+```
+
+```{r}
+#| echo: false
+#| include: false
+##Merge other state-wise dataframes with india shp file
+
+num_mandis_reg<- read_csv("state_num_mandis_regulated.csv")
+##Dropping totals 
+num_mandis_reg <- num_mandis_reg[1:27,]
+##Join with indiabound
+indiabound <- indiabound |>
+  mutate(adj_names = c("Puducherry" ,"Maharashtra", "Nagaland","Lakshadweep", "Uttar Pradesh" ,"Tamil Nadu" ,"Chhattisgarh" ,"Gujarat", "Delhi" ,"Sikkim" ,"Tripura"  ,"West Bengal", "Odisha", "Bihar", "Ladakh","Rajasthan", "Telangana" ,"Andhra Pradesh"   , "Mizoram"   , "Arunachal Pradesh", "Meghalaya" ,"Jharkhand"  ,"Assam"  ,"Manipur", "Karnataka"       ,"Uttarakhand" ,"Dādra and Nagar Haveli and Damān and Diu" ,"Madhya Pradesh" , "Goa"   , "Kerala", "Chandigarh" ,"Andaman and Nicobar Islands" , "Himachal Pradesh"  ,"Jammu and Kashmir" , "Punjab","Haryana" ))
+
+indiabound <- indiabound |>
+  inner_join(num_mandis_reg, by = "adj_names")
+
+##Enam file
+
+num_mandis_enam<- read_csv("state_num_mandis_in_enam.csv")
+##Dropping totals 
+num_mandis_enam <- num_mandis_enam[1:18,]
+
+##Full join because I want the unmatched ones included
+indiabound <- indiabound |>
+  full_join(num_mandis_enam, by = "adj_names")
+
+# Replace NAs with 0s using is.na() and replace()
+indiabound <- replace(indiabound, is.na(indiabound), 0)
+
+##create variable for enam participation as percentage of total APMC markets
+indiabound <- indiabound |>
+  mutate(enam_pct = indiabound[[12]]/indiabound[[10]])
+
+##MAP indian state-wise e-NAM participation using quantiles
+#tm_shape(indiabound) + tm_borders() + tm_fill("enam_pct", title = "e-NAM Participation (%)",style = "quantile", n = 4) 
+
+```
+
+### Map of Indian APMC participation in e-NAM per state (as a % of APMCs)
+
+I am in the process of grouping APMCs by commodity, through which I only want to keep the ones that specialize in wheat for the sake of my study. However, this is a prototype with all commodities.
+
+Overlayed are the districts within each state. As I am still trying to troubleshoot some errors in creating centroids, the vision is to create an additional map of the states. I would ideally make a centroid for each district whose size is proportional to its cold storage capacity. I have district-wide cold storage capacity from 2018 to 2022. I would want to see the evolution of the centroids grow or fall depending on e-NAM participation to assess the impact of e-NAM's warehousing efforts.
+```{r}
+
+#| include: false
+##Add centroid per district. make size proportional to magnitude of cold storage available
+
+indiadistbound <- st_read("geoADM2/geoBoundaries-IND-ADM2_simplified.shp")
+
+#tm_shape(indiabound) + tm_borders() + tm_fill("enam_pct", title = "e-NAM Participation (%)",style = "quantile", n = 4)+tm_shape(indiadistbound) + tm_borders()
+#making centroids
+#indiadistcent <- indiadistbound|>
+ #st_centroid()
+map1 <- tm_shape(indiabound) + tm_borders() + tm_fill("enam_pct", title = "e-NAM Participation (%)",style = "quantile", n = 4)+tm_shape(indiadistbound) + tm_borders()
+#making centroids
+tmap_save(map1,"map1.png")
+knitr::include_graphics("map1.png")
+
+```
+
+## Summary Statistics
+
+This is a table of the average commodity prices (in lakh rupees) for arrivals of wheat for Feb 13, 2024. This is district-wide data where each district specializes in a particular commodity. The number of districts per state specializing in wheat is displayed under N. 
+
+I also wanted to use this for commodities utilizing cold storages (so wheat, rice, amongst others) to analyze whether the issue is wheat specific or not. I would use dates that surround a particular wheat supply shock to confirm whether the volatility is endogenous to my selection of wheat. 
+```{r}
+state_com_prices <- read_csv("state_mandi_commodity_prices_2-13.csv")
+com_sum <- state_com_prices |>
+  filter(Commodity == "Wheat" ) |>
+  group_by(State)|>
+  summarize(
+    N = n(),
+    avgPrice = mean(Modal_x0020_Price)
+  ) |>
+  kable(booktabs = TRUE, digits = 0) |>
+  kableExtra::kable_styling(full_width = TRUE)
+
+com_sum
+```
+

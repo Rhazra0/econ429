@@ -1,0 +1,116 @@
+---
+title: "Lab 3"
+format: pdf
+editor: visual
+---
+
+#Vector Manipulation and Inroduction to Regression in R
+
+### Read in Murdoch Shape Files
+
+```{r}
+pacman::p_load(tidyverse, sf, tmap, haven, readxl, raster, exactextractr, fixest)
+library(readr)
+
+tmap_mode("view")
+```
+
+murdcentbuff \<- murdcent \|\>
+
+st_buffer(20000)
+
+tm_shape(murdcentbuff) + tm_borders() + tm_shape(murdcent) + tm_dots("pink", size = 0.01)
+
+```{r}
+# 1. Getting Nunn's shape file data
+murdbound <- st_read("borders_tribes.shp")
+
+tm_shape(murdbound) + tm_borders()
+
+# 2. Creating centroids
+murdcent <- murdbound|>
+  st_centroid()
+
+tm_shape(murdbound) + tm_borders() + tm_shape(murdcent) + tm_dots("pink", size = 0.01)
+
+##Extract coordinates from Geometry points, possibly use st_coordinates?
+
+## Let's map:
+
+# 3. Create buffer zones (1km) around the centroid
+murdcentbuff <- murdcent |>
+  st_buffer(20000)
+
+tm_shape(murdcentbuff) + tm_borders() + tm_shape(murdcent) + tm_dots("pink") 
+##To maximize the buffers such that it is the max distance from the centroid while being fatherst from any other centroid, use st_voronoi to make Thiessen Polygons
+
+
+###Create a buffer around the ethnic group boundary
+
+murdboundbuff <- murdbound |>
+  st_buffer(100000)
+
+tm_shape(murdbound) + tm_borders() + tm_shape(murdboundbuff) + tm_borders("pink")
+```
+
+```{r}
+
+
+# 4. Murdoch ethnographic atlas. Let's download it
+
+ethnoatlas <- read_dta("Ethnographic_Atlas_final.dta")
+
+# 5. Geocoding points data
+
+##Suppose we only want the longitude  and latitude of centroids. We can use that to  create a point file
+ethnoatlasgeo <- ethnoatlas |>
+  st_as_sf(coords = c("v106", "v104"), crs = 4326) ##sf = simple feature, 
+##written longitude (x) and latitude(y), uses WGS84 (or code 4326 according
+## to EPSG numbers)
+
+ethnoatlasgeo |>
+  tm_shape() + tm_dots() #same as saying tm_shape(ethnoatlasgeo) + tm_dots
+
+tm_shape(ethnoatlasgeo) + tm_dots("pink")+ tm_shape(murdcent) + tm_dots("red") 
+##note, it is tm_dots because the geometry is of type points and not polygon
+
+
+###Traffic deer accidents example, geocode it
+wyacc <- readRDS("traffic_accidents_wyoming.rds")
+
+wyaccgeo <- wyacc |>
+  st_as_sf(coords = c("Start_Lng", "Start_Lat"), crs = 4326)
+
+wyaccgeo |>
+  tm_shape() + tm_dots("purple")
+
+```
+
+### Vector Calculation
+
+```{r}
+
+##calculate the area of each ethnic group boundary and add it as column in boundary file
+murdbound <- murdbound |>
+  mutate(area = st_area(geometry)) |>
+  mutate(areasqkm = as.numeric(st_area(geometry))/100000)
+
+##Calculate distance from centroid to coastline
+
+coastline <- st_read("ne_10m_coastline/ne_10m_coastline.shp")
+
+coastline |>
+  tm_shape() + tm_lines()
+
+##Now to the calculation
+###First identify the nearest point then calculate the distance to that nearest point
+murdcent <- murdcent |>
+  mutate(dist_to_coast = st_distance(geometry, coastline[st_nearest_feature(geometry,coastline),], by_element = TRUE))
+
+###Convert to km
+murdcent <- murdcent |>
+  mutate(dist_to_coast_km = as.numeric(dist_to_coast)/1000)
+
+tm_shape(murdcent) + tm_symbols(col = "dist_to_coast", ) ## tm_symbol shows something about points
+
+```
