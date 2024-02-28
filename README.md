@@ -2,6 +2,9 @@
 
 ## Data Sets Used
 
+### APMCs integrated in e-NAM
+I use the number of markets covered by e-NAM found in AgMarknet (https://www.agmarknet.gov.in/new/eNAMMarket.aspx) which shows 410 total mandis. The full 585 are shown in PIB Delhi (https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1558623) as of Jan 2019.
+
 ### For commodity to mandi mapping: 
 (i.e. state_mandi_commodity_prices_2-13.csv) I utilized the "Current Daily Price of Various Commodities from Various Markets (Mandi)" from data.gov.in for Feb, 13, 2024. According to data.gov.in, "The data refers to prices of various commodities. It has the wholesale maximum price, minimum price and modal price on daily basis. This dataset is generated through the AGMARKNET Portal (http://agmarknet.gov.in), which disseminates daily market information of various commodities."
 
