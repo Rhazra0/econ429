@@ -2,6 +2,17 @@
 
 ## Data Sets Used
 
+### APMCs specializing in wheat
+#### Within Non-e-NAM States
+Delhi, Meghalaya, Assam, Nagaland, Tripura, Karnataka, Arunachal Pradesh, Sikkim, Mizoram and Goa according to e-NAM brief (https://enam.gov.in/web/assest/download/story/e-NAM-Coverage-Taking-Root-Slowly-Press-Note.pdf), the former 5 due to not taking the required APMC reforms.
+
+#### Within e-NAM States
+Aggregating the AgMarknet Markets by Wheat commodity, I obtain the following list of relevant states: Bihar, Chattisgarh, Gujarat, Karnataka, Madhya Pradesh, Maharashtra, Rajasthan, Uttar Pradesh, Uttrakhand, West Bengal
+I'll further obtain the wheat mandis on a state-by-state basis using their APMC site:
+Andhra Pradesh: list of e-NAM markets obtained from APMC site (https://market.ap.nic.in/emarketing.html), no wheat specializations;
+Maharashtra: "COMMODITY WISE ARRIVALS & PRICES AT WHOLESALE MARKETS" (https://www.msamb.com/ApmcDetail/APMCPriceInformation), specifying sales of wheat(husked)
+Punjab: 
+
 ### APMCs integrated in e-NAM
 I use the number of markets covered by e-NAM found in AgMarknet (https://www.agmarknet.gov.in/new/eNAMMarket.aspx) which shows 410 total mandis. The full 585 are shown in PIB Delhi (https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1558623) as of Jan 2019.
 
