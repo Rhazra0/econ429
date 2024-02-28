@@ -4,7 +4,7 @@
 
 ### APMCs specializing in wheat
 #### Within Non-e-NAM States
-Delhi, Meghalaya, Assam, Nagaland, Tripura, Karnataka, Arunachal Pradesh, Sikkim, Mizoram and Goa according to e-NAM brief a), the former 5 due to not taking the required APMC reforms. As part of this study is state-wise, I'll exclude the union territories (i.e. Delhi) and states without APMC (i.e. Mizoram).
+Nonparticipating states/UTs are Delhi, Meghalaya, Assam, Nagaland, Tripura, Karnataka, Arunachal Pradesh, Sikkim, Mizoram and Goa, according to an e-NAM brief; the former 5 have not taken the required APMC reforms, while the rest choose not to join. Since part of this study is state-wise, I'll exclude the union territories (i.e. Delhi) and states without APMC (i.e. Mizoram).
 
 Arunachal Pradesh:
 
@@ -37,7 +37,7 @@ Tripura:
 
 
 #### Within e-NAM States
-Aggregating the AgMarknet Markets by Wheat commodity, I obtain the following list of relevant states: Bihar, Chattisgarh, Gujarat, Karnataka, Madhya Pradesh, Maharashtra, Rajasthan, Uttar Pradesh, Uttrakhand, West Bengal
+Aggregating the APMCs on e-NAM (https://enam.gov.in/NAMV2/home/implemented_progress.html#) based on Wheat commodity, I obtain the following list of relevant states: Bihar, Chattisgarh, Gujarat, Karnataka, Madhya Pradesh, Maharashtra, Rajasthan, Uttar Pradesh, Uttrakhand, West Bengal
 
 I'll further obtain the wheat mandis on a state-by-state basis using their APMC site:
 
@@ -45,15 +45,21 @@ Bihar:
 
 Chattisgarh:
 
-Gujarat:
+Gujarat: Ahmedabad, Bhiloda, Botad, Dahod, Deesa, Dhoalka, Dhrol, Godhra, Halvad, Himmatnagar, Jamnagar, Jasdan, Jhalod, Junagadh, Nizar, Porbandar, Rajkot, Sanand, Savarkundla, Savli, Talod, Thara, Visavadar, Visnagar, 
+
+Haryana: Adampur, Ambala, Asandh, Barwala Hisar, Bhiwani, CH Dadri, Cheeka, Chhachhrauli, Dabwali, Dhand, Ellanabad, Faridabad, Fatehabad, Ganaur, Gharaunda, Gohana, Hansi, Hodal, Indri, Ismailabad, Jakhal, Jhajjar, Jind, Jullana, Kaithal, Kalanwali, Kalayat, Karnal, Ladwa, Madlauda, Mullana, Narnaund, Narwana, Nissing, Palwal, Panipat, Pehowa, Pillukhera, Pundri, Rania, Ratia, Rewari, Rohtak, Safidon, Samalkha, Shahbad, Sirsa, Siwani, Sonepat, Taraori, Thanesar, Tohana, Uchana
+
+Himachal Pradesh: Paonta Sahib
+
+Jharkhand: Gridih, Lohardaga,
 
 Karnataka:
 
-Madhya Pradesh:
+Madhya Pradesh: Betul, Chhindwara, Karond, Sanwer, Timarni
 
-Maharashtra: "COMMODITY WISE ARRIVALS & PRICES AT WHOLESALE MARKETS" (https://www.msamb.com/ApmcDetail/APMCPriceInformation), specifying sales of wheat(husked)
+Maharashtra: Ahmednagar, Aurangabad, Dound, Malegoan, Malkapur, Nandurbar, Newasa, Rahuri, Tumsar, Wardha, Yeola
 
-Rajasthan:
+Rajasthan: Atru, Bandikui, Bikaner Grain,
 
 Uttar Pradesh:
 
@@ -65,8 +71,8 @@ West Bengal:
 ### APMCs integrated in e-NAM
 I use the number of markets covered by e-NAM found in AgMarknet (https://www.agmarknet.gov.in/new/eNAMMarket.aspx) which shows 410 total mandis. The full 585 are shown in PIB Delhi (https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1558623) as of Jan 2019.
 
-### For commodity to mandi mapping: 
-(i.e. state_mandi_commodity_prices_2-13.csv) I utilized the "Current Daily Price of Various Commodities from Various Markets (Mandi)" from data.gov.in for Feb, 13, 2024. According to data.gov.in, "The data refers to prices of various commodities. It has the wholesale maximum price, minimum price and modal price on daily basis. This dataset is generated through the AGMARKNET Portal (http://agmarknet.gov.in), which disseminates daily market information of various commodities."
+### For e-NAM's commodity to mandi mapping: 
+I will use the "APMC Commodity Details" found on e-NAM (https://enam.gov.in/NAMV2/home/implemented_progress.html#) which lists the State, Mandi, Parent Commodity, and Variety for 470 Mandis across 14 States as of 31st Oct 2017
 
 ### For WDRA registered warehouses mapping per state:
 I used the warehouses registered under the Warehousing Development and Regulatory Authority (WDRA) whose registration date was 2018 (the earliest offered on the site). This contributes to my additional objective of comparing wheat prices pre-2018 and during 2018, given mandi distance to these warehouses.
