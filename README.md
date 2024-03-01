@@ -3,9 +3,15 @@
 ## Data Sets Used
 
 ### Summary Statistics
-#### Wholesale vs. Retail Wheat Price Differences
-As part of my study's motivation, acts as an overview to reveal potential unrealized profits due to the price gouging practices of intermediaries. Firstly, I obtain a measure of monthly wholesale prices for wheat using the Wholesale Price Index from Apr 2012 to Jan 2024 (https://eaindustry.nic.in/download_data_1112.asp), which tracks the average change in prices of goods sold in bulk transactions before they reach consumers at retail stores. It essentially acts as a gauge for inflation at the wholesale level. 
+#### Wholesale Wheat Price Inflation Compared to Other Commodities
+As part of my study's motivation, acts as an overview to reveal potential unrealized profits due to upward price pressure (from causes such as climate, speculation in commodity futures, input prices, etc). I obtain a measure of monthly wholesale prices for wheat using the monthly Wholesale Price Index from Apr 2012 to Jan 2024 (https://eaindustry.nic.in/download_data_1112.asp), which tracks the average change in prices of goods sold in bulk transactions before they reach consumers at retail stores. It essentially acts as a gauge for inflation at the wholesale level. 
 - Credibility: It is compiled by the Office of the Economic Advisor in the Indian Ministry of Commerce and Industry. It includes a basket of 102 primary articles, 19 fuel and power items, and 555 manufactured products. The weighting of each item in the index is based on its contribution to the gross value of output in the economy. This uses 2011-2012 as the base year for comparison.
+
+### Dates of e-NAM integration
+I obtained the list of Enrolled Mandis with State, District, Location, Contact info, and *phases* (https://enam.gov.in/NAMV2/home/mandis.html#); labeled as enam_mandis_w_phases.csv
+- It lists 470 Mandis across 14 States on e-NAM as of 31st Oct 2017
+- The remaining 115 were connected by March 2018 (https://blog.mygov.in/editorial/looking-back-union-budget-2017/)
+- The full 585 are shown in PIB Delhi (https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1558623) as of Jan 2019.
 
 ### APMCs specializing in wheat
 #### Within Non-e-NAM States
@@ -41,43 +47,12 @@ Sikkim:
 Tripura:
 
 
-#### Within e-NAM States
-Aggregating the APMCs on e-NAM (https://enam.gov.in/NAMV2/home/implemented_progress.html#) based on Wheat commodity, I obtain the following list of relevant states: Bihar, Chattisgarh, Gujarat, Karnataka, Madhya Pradesh, Maharashtra, Rajasthan, Uttar Pradesh, Uttrakhand, West Bengal
-
-I'll further obtain the wheat mandis on a state-by-state basis using their APMC site:
-
-Bihar:
-
-Chattisgarh:
-
-Gujarat: Ahmedabad, Bhiloda, Botad, Dahod, Deesa, Dhoalka, Dhrol, Godhra, Halvad, Himmatnagar, Jamnagar, Jasdan, Jhalod, Junagadh, Nizar, Porbandar, Rajkot, Sanand, Savarkundla, Savli, Talod, Thara, Visavadar, Visnagar, 
-
-Haryana: Adampur, Ambala, Asandh, Barwala Hisar, Bhiwani, CH Dadri, Cheeka, Chhachhrauli, Dabwali, Dhand, Ellanabad, Faridabad, Fatehabad, Ganaur, Gharaunda, Gohana, Hansi, Hodal, Indri, Ismailabad, Jakhal, Jhajjar, Jind, Jullana, Kaithal, Kalanwali, Kalayat, Karnal, Ladwa, Madlauda, Mullana, Narnaund, Narwana, Nissing, Palwal, Panipat, Pehowa, Pillukhera, Pundri, Rania, Ratia, Rewari, Rohtak, Safidon, Samalkha, Shahbad, Sirsa, Siwani, Sonepat, Taraori, Thanesar, Tohana, Uchana
-
-Himachal Pradesh: Paonta Sahib
-
-Jharkhand: Gridih, Lohardaga,
-
-Karnataka:
-
-Madhya Pradesh: Betul, Chhindwara, Karond, Sanwer, Timarni
-
-Maharashtra: Ahmednagar, Aurangabad, Dound, Malegoan, Malkapur, Nandurbar, Newasa, Rahuri, Tumsar, Wardha, Yeola
-
-Rajasthan: Atru, Bandikui, Bikaner Grain,
-
-Uttar Pradesh:
-
-Uttrakhand:
-
-West Bengal:
-
-
-### APMCs integrated in e-NAM
-I use the number of markets covered by e-NAM found in AgMarknet (https://www.agmarknet.gov.in/new/eNAMMarket.aspx) which shows 410 total mandis. The full 585 are shown in PIB Delhi (https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1558623) as of Jan 2019.
-
 ### For e-NAM's commodity to mandi mapping: 
-I will use the "APMC Commodity Details" found on e-NAM (https://enam.gov.in/NAMV2/home/implemented_progress.html#) which lists the State, Mandi, Parent Commodity, and Variety for 470 Mandis across 14 States as of 31st Oct 2017
+I will use the "APMC Commodity Details" found on e-NAM (https://enam.gov.in/NAMV2/home/implemented_progress.html#) which lists the State, Mandi, Parent Commodity, and Variety
+- the list has 470 Mandis across 14 States as of 31st Oct 2017
+
+### For Commodity-Wise Monthly Prices of Wheat by Mandi
+I obtained from Commodity-wise, Min,Max,Modal Price/Arrival Data (https://agmarknet.gov.in/SearchCmmMkt.aspx?Tx_Commodity=1&Tx_State=AS&Tx_District=0&Tx_Market=0&DateFrom=27-Feb-2000&DateTo=27-Feb-2024&Fr_Date=27-Feb-2000&To_Date=27-Feb-2024&Tx_Trend=0&Tx_CommodityHead=Wheat&Tx_StateHead=Assam&Tx_DistrictHead=--Select--&Tx_MarketHead=--Select--) from Jan 1, 2003 to Jan 1, 2023 per state. The goal is to join them into one consolidated data frame. Then, I will overlay it with the mandi e-NAM list from above. 
 
 ### For WDRA registered warehouses mapping per state:
 I used the warehouses registered under the Warehousing Development and Regulatory Authority (WDRA) whose registration date was 2018 (the earliest offered on the site). This contributes to my additional objective of comparing wheat prices pre-2018 and during 2018, given mandi distance to these warehouses.
