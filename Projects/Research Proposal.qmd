@@ -1,0 +1,81 @@
+---
+title: "e-NAM's cross-market price impact and reflections on price discovery and competition: evidence from India's wheat mandis"
+author: "Rhine Hazra"
+format: pdf
+toc: true
+extra_dependencies: ["float", "amsmath"]
+editor: source
+bibliography: references.bib
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+#|label: setup
+library(mosaic)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(tidyr)
+library(dplyr)
+```
+
+
+## Background
+
+India's wheat market presents a unique puzzle: characterized by high price persistence (i.e. shocks linger and adjustments take time), it presents unique opportunities for policy reform on a local level, where price is negotiated upon and access to information/infrastructure is a key leverage [@SSA:2022]. 
+
+Firstly, high price persistence presents arbitrage potential for those who can exploit price discrepancies across markets or time periods. Given that farmers are vulnerable to delayed responses to changing market conditions, speculative storage decisions (which is particularly relevant to temperature-dependent crops like wheat) also become critical in such a system. Thus, understanding how to minimize price discrepancies allows for more effective hedging strategies and storage optimization on the producer and buyer end.
+
+Two key policies in the forefront of India's agricultural price regulation are the Agriculture Produce Marketing Committee (APMC) Acts and the National Agriculture Market (e-NAM) platform. In absence of competitive market structure, the APMC Acts were rolled out during the 1960s and 70s, through which the geographical area of participating states were divided into smaller market areas, also called "mandis," and became managed by a Market Committee regulated by state governments. APMCs' notable principles include being able to set a single market levy across within-state sales, preventing wholesale marketing activities, and prohibiting direct sale between retailers and farmers such that produce has to be sold to a licensed intermediary. While aiming to protect farmers during the decades of Indian self-determination after India's independence in 1947, the APMC system is arguably outdated. APMCs may restrict market access by creating smaller, regulated mandis, limiting competition and potentially allowing dominant players (with some leverage in access to information) to form cartels. This can lead to artificially inflated prices for consumers and lower prices for farmers. While the APMC institutes a minimum support price that is aimed to prevent purchases below a certain threshold, the lack of unification among sellers and intermediaries creates an environment ripe for exploitative practices and limited information access.
+
+
+As a direct response to the limitations and pitfalls of the existing APMC system, e-NAM launched in 2016 as an online platform where farmers can compare prices across various markets and choose the best option, reducing their reliance on intermediaries and information asymmetry. In theory, this platform should be an indirect benefit to price discovery and possible supply shocks. As a farmer, the difference between being in e-NAM and not manifests in the bidding process: as the farmer brings their produce to their respective market yard, local traders and traders (potentially out of state) on e-NAM can bid. The farmer may choose to accept either the local offer or the online offer. With real-time data on bids across different markets, there is hope that transparency exposes local traders to competing offers, making it harder for them to manipulate prices downwards. 
+
+With the goal of covering 585 APMC mandis across India, the e-NAM project instituted 3 schedules of adoption: 250 mandis in 2015, 200 mandis in 2016, and 135 mandis in 2017. This staggered schedule was largely to accommodate for the mandi-level reforms needed. While there are no state-wise restrictions to joining, APMCs would have to incorporate an additional provision for e-auction/trading as a mode of price discovery. Notable barriers to adoption have been the digital divide and the APMCs' limited logistical power and trust within some communities.
+
+## Research Questions
+
+In an effort to find incentives for APMCs to engage in e-NAM discourse with their constituents, in the hopes of earning more revenue through increased purchasing levies or even enhancing their rural connectivity, this paper hypothesizes that mandis participating in e-NAM see greater cross-market price convergence. The hope is that a convergence in prices has buffering capabilities during times of weather-induced supply shocks and have some positive impact on the connectivity of rural transportation.
+
+Thus, this paper's main research question is how mandi-level e-NAM participation affects cross-market prices for wheat from 2014 to 2018 and whether price convergence (or lack thereof) presents outcomes for improving farmer productivity (i.e. increased cold storage projects or increased channels of information/transportation).
+
+
+## Methodology
+
+We will use panel data with 3 periods (the 3 e-NAM waves discussed above) and a certain number of wheat mandi units. The units are not exactly balanced since overall mandi-integration has been 250, 200, or 150 units per wave. We have yet to fully calculate, from those unbalanced subsamples, how many are wheat mandis. Further, we expect the duration of the data to be from 2014 to 2018, with the observations from 2014-2015 before e-NAM to act as the "control", untreated period.
+
+Typically difference-in-difference (DD) methods use a two-way fixed effects estimator to compare mean outcomes in a two-period study of treatment groups. Given the nature of e-NAM integration (i.e. 3 waves of participation, different numbers of mandis being integrated per wave, and potential spillover effects between waves), this paper will use an alternative derivation of the fixed effects estimator from Andrew Goodman-Bacon. The estimator will be treated as a "Weighted average of all possible two-group/two-period DD estimators..." [@GB:2019].
+
+Before considering the alternative DD approach, this is the basic regression form:
+$$
+\tag{1}  p_{mts} = a_m + a_t + a_s + \beta \text{eNAM}_{mts} + \epsilon_{mts}
+$$
+where $p_{mts}$ is the outcome variable for market-wise wholesale prices for wheat in mandi $m$ in state $s$ at month $t$ [@agmarknet2] [@enam], $eNAM_{mts}$ is the treatment indicator variable equal to 1 if the mandi joined e-NAM at a particular wave and 0 otherwise [@agmarknet1]; $a_m$ is a vector of mandi-level fixed effects, like household idiosyncrasies; $a_t$ is a vector of "month" fixed effects (though due to a lack of monthly data, it will be month-season fixed effects that controls for seasonal weather variation possibly impacting prices per month); $a_s$ is a vector of state fixed effects with variables like geography and the state minimum support price. Notably, $\beta$ is the DD estimator. I also want to measure outcomes for e-NAM's impact on storage and efficient transportation to introduce a spatial aspect. 
+
+However, given that $eNAM_{mts}$ varies by wave (i.e. 2015, 2016 or 2017), we will employ the following changes to the estimator.
+
+Firstly, we will amend the process in [@GB:2019] to add one more treatment group. $T$, the total time for "treatment" is 3 years (from 2015 - 2018) with each $t_\ell \in T$ being the point symbolizing the end of a wave $\ell$. As mentioned earlier, with $p_{mts}$ including the year 2014-2015 before e-NAM existed, that will be our control and we will compare post-treatment prices to those. Inspired by Goodman-Bacon's use of treatment and late treatment groups, we introduce 3 treatment groups: $\ell_0, \ell_1, \ell_2$ denote the chronological 3 waves of treatment such that we can divide $T$ into [0,$t_{\ell_0}$], [$t_{\ell_0}$, $t_{\ell_1}$], and [$t_{\ell_1}$, $t_{\ell_2}$], where $\ell_2$ is the end segment of T. We will treat these time intervals as distinct treatment periods, where for any wave, PRE($\ell$) is the interval between wave $\ell$ and a previous wave of interest. Similarly, POST($\ell$) is the interval between wave $\ell$ and T, the end of the overall treatment period. As an example, for the first wave $\ell_0$ for year 2015, PRE($\ell_0$) = [0,$\ell_0$] and POST($\ell_0$) = [$\ell_0$, T]. We will also try to capture the between-wave differences using MID($\ell_a, \ell_b$) = [$t_{\ell_a}$, $t_{\ell_b}$], for two waves such that $\ell_a$ occurs before $\ell_b$.
+
+This gives us two types of estimators, one comparing a given wave $\ell$ to the control group C (all observations before 2015) and one comparing one wave $\ell_a$ to another $\ell_b$. Equations (2) and (3) below capture all possible two-way (hence, 2x2) estimates of either treatment-control variations or within treatment-level variations, respectively. 
+
+$$
+\tag{2}  \hat\beta^{2x2}_{\ell, C} =  (\bar p_{\ell}^{POST(\ell)} - \bar p_{\ell}^{PRE(\ell)}) - (\bar p_{C}^{POST(\ell)} - \bar p_{C}^{PRE(\ell)})
+$$
+
+
+$$
+\tag{3} \hat\beta^{2x2}_{\ell_a, \ell_b} =  (\bar p_{\ell_a}^{POST(\ell_a, \ell_b)} - \bar p_{\ell_a}^{MID(\ell_a)}) - (\bar p_{\ell_b}^{POST(\ell_a, \ell_b)} - \bar p_{\ell_b}^{MID(\ell_a)})
+$$
+
+Notably, the convention follows that $\bar p_{\ell}^{POST(\ell)} = \bar p_{mts}$ for some wave $\ell$. This allows us to also calculate the PRE and MID intervals as they overlap with some wave's POST interval. These equations suggest that the typical TWFE estimate can be a weighted combination of all possible two-way estimates within subsamples (i.e. treated v. control subsamples or within-treatment group subsamples).
+
+To then map these estimates to some conclusion about causality, we would calculate an average treatment effect that varies per treatment group and per weight ascribed to the treatment periods. Note, these weights are somewhat proportional to the scale of the subsample. 
+
+One robustness test we would employ would be Goodman-Bacon's use of creating and regressing on a threshold for an "effective treatment group" using weights. This would also address our concern for balanced subsamples.
+
+
+
+
+## References
+
+::: {#refs}
+:::
