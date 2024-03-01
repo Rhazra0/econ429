@@ -2,6 +2,11 @@
 
 ## Data Sets Used
 
+### Summary Statistics
+#### Wholesale vs. Retail Wheat Price Differences
+As part of my study's motivation, acts as an overview to reveal potential unrealized profits due to the price gouging practices of intermediaries. Firstly, I obtain a measure of monthly wholesale prices for wheat using the Wholesale Price Index from Apr 2012 to Jan 2024 (https://eaindustry.nic.in/download_data_1112.asp), which tracks the average change in prices of goods sold in bulk transactions before they reach consumers at retail stores. It essentially acts as a gauge for inflation at the wholesale level. 
+- Credibility: It is compiled by the Office of the Economic Advisor in the Indian Ministry of Commerce and Industry. It includes a basket of 102 primary articles, 19 fuel and power items, and 555 manufactured products. The weighting of each item in the index is based on its contribution to the gross value of output in the economy. This uses 2011-2012 as the base year for comparison.
+
 ### APMCs specializing in wheat
 #### Within Non-e-NAM States
 Nonparticipating states/UTs are Delhi, Meghalaya, Assam, Nagaland, Tripura, Karnataka, Arunachal Pradesh, Sikkim, Mizoram and Goa, according to an e-NAM brief; the former 5 have not taken the required APMC reforms, while the rest choose not to join. Since part of this study is state-wise, I'll exclude the union territories (i.e. Delhi) and states without APMC (i.e. Mizoram).
