@@ -54,6 +54,10 @@ I will use the "APMC Commodity Details" found on e-NAM (https://enam.gov.in/NAMV
 I obtained from Commodity-wise, Min,Max,Modal Price/Arrival Data (https://agmarknet.gov.in/SearchCmmMkt.aspx?Tx_Commodity=1&Tx_State=AS&Tx_District=0&Tx_Market=0&DateFrom=27-Feb-2000&DateTo=27-Feb-2024&Fr_Date=27-Feb-2000&To_Date=27-Feb-2024&Tx_Trend=0&Tx_CommodityHead=Wheat&Tx_StateHead=Assam&Tx_DistrictHead=--Select--&Tx_MarketHead=--Select--) from Jan 1, 2003 to Jan 1, 2023 per state. The goal is to join them into one consolidated data frame. Then, I will overlay it with the mandi e-NAM list from above. 
 - no Gujarat, Madhya Pradesh, Meghalaya, Pondicherry, Tripura, 
 
+### Fixed Effects Data:
+I obtained state-fixed effects from:
+- "Gross Cell Products in 2005" from Yale University's Geographically based Economic (G-Econ) database for India (https://gecon.yale.edu/india); Gross Cell Product(GCP) is the regional equivalent of gross domestic product. GCP is measured at a 1-degree longitude by 1-degree latitude resolution
+
 ### For WDRA registered warehouses mapping per state:
 I used the warehouses registered under the Warehousing Development and Regulatory Authority (WDRA) whose registration date was 2018 (the earliest offered on the site). This contributes to my additional objective of comparing wheat prices pre-2018 and during 2018, given mandi distance to these warehouses.
 (https://wdra.gov.in/web/wdra/registered-warehouses?p_p_id=com_example_portlet_WarehousePubliclistPortletmvcportletPortlet_INSTANCE_DQ39eCD05UCA&p_p_state=normal&p_p_mode=view&_com_example_portlet_WarehousePubliclistPortletmvcportletPortlet_INSTANCE_DQ39eCD05UCA_javax.portlet.action=processWarehouseListReport&p_p_lifecycle=0)
