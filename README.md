@@ -27,8 +27,7 @@ Assam: APMC/"regulated market committee" site (https://asamb.assam.gov.in/inform
 - Darrang: Balugaon
 - Dhing: Dhing, Doomdomia
 - Morigaon: Kushtoli
-  
-Price from Assam[Wheat] from 27-Feb-2014To27-Feb-2024 (https://agmarknet.gov.in/SearchCmmMkt.aspx?Tx_Commodity=1&Tx_State=AS&Tx_District=0&Tx_Market=0&DateFrom=27-Feb-2014&DateTo=27-Feb-2024&Fr_Date=27-Feb-2014&To_Date=27-Feb-2024&Tx_Trend=0&Tx_CommodityHead=Wheat&Tx_StateHead=Assam&Tx_DistrictHead=--Select--&Tx_MarketHead=--Select--)
+
 
 Goa: APMC site (https://gsamb.in/), wheat not a regulated agricultural commodity (https://gsamb.in/commodities/) 
 
@@ -53,6 +52,7 @@ I will use the "APMC Commodity Details" found on e-NAM (https://enam.gov.in/NAMV
 
 ### For Commodity-Wise Monthly Prices of Wheat by Mandi
 I obtained from Commodity-wise, Min,Max,Modal Price/Arrival Data (https://agmarknet.gov.in/SearchCmmMkt.aspx?Tx_Commodity=1&Tx_State=AS&Tx_District=0&Tx_Market=0&DateFrom=27-Feb-2000&DateTo=27-Feb-2024&Fr_Date=27-Feb-2000&To_Date=27-Feb-2024&Tx_Trend=0&Tx_CommodityHead=Wheat&Tx_StateHead=Assam&Tx_DistrictHead=--Select--&Tx_MarketHead=--Select--) from Jan 1, 2003 to Jan 1, 2023 per state. The goal is to join them into one consolidated data frame. Then, I will overlay it with the mandi e-NAM list from above. 
+- no Gujarat, Madhya Pradesh, Meghalaya, Pondicherry, Tripura, 
 
 ### For WDRA registered warehouses mapping per state:
 I used the warehouses registered under the Warehousing Development and Regulatory Authority (WDRA) whose registration date was 2018 (the earliest offered on the site). This contributes to my additional objective of comparing wheat prices pre-2018 and during 2018, given mandi distance to these warehouses.
