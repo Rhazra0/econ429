@@ -25,6 +25,6 @@ I obtained from Commodity-wise, Min,Max,Modal Price/Arrival Data (https://agmark
 ### Availability of Agricultural Credit 
 I use the International Crops Research Institute for the Semi-Arid Tropics District-level Database (DLD), particularly its data on number of banks from 2003 to 2015 (http://data.icrisat.org/dld/src/infrastructure.html)
 
-### For WDRA registered warehouses mapping per state:
-I used the warehouses registered under the Warehousing Development and Regulatory Authority (WDRA) whose registration date was 2018 (the earliest offered on the site). This contributes to my additional objective of comparing wheat prices pre-2018 and during 2018, given mandi distance to these warehouses.
-(https://wdra.gov.in/web/wdra/registered-warehouses?p_p_id=com_example_portlet_WarehousePubliclistPortletmvcportletPortlet_INSTANCE_DQ39eCD05UCA&p_p_state=normal&p_p_mode=view&_com_example_portlet_WarehousePubliclistPortletmvcportletPortlet_INSTANCE_DQ39eCD05UCA_javax.portlet.action=processWarehouseListReport&p_p_lifecycle=0)
+### Wheat Suitability per district
+I use FAO's GAEZ database to find Output density (potential production divided by total grid cell area) for wheat. 
+
