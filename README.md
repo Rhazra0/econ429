@@ -23,8 +23,8 @@ I obtained from Commodity-wise, Min,Max,Modal Price/Arrival Data (https://agmark
 - no Gujarat, Madhya Pradesh, Meghalaya, Pondicherry, Tripura, 
 
 ### Availability of Agricultural Credit 
-I use the International Crops Research Institute for the Semi-Arid Tropics District-level Database (DLD), particularly its data on number of banks from 2003 to 2015 (http://data.icrisat.org/dld/src/infrastructure.html)
+I use the data from the Handbook of Statistics on Indian States (2020), Reserve Bank of India (RBI) scraped from Vinod Kumar's "Trends and Patterns in Agriculture Credit in India" (2021) working paper. It gives the Region/State-wise Credit-Deposit Ratio of Scheduled Commercial Banks in India from 2005 to 2019.
 
 ### Wheat Suitability per district
-I use FAO's GAEZ database to find Output density (potential production divided by total grid cell area) for wheat. 
+I use FAO's Global Agro-Ecological Zoning (GAEZ) database to find Output density (potential production divided by total grid cell area) for wheat. 
 
