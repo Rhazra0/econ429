@@ -25,6 +25,9 @@ I obtained from Commodity-wise, Min,Max,Modal Price/Arrival Data (https://agmark
 ### Availability of Agricultural Credit 
 I use the data from the Handbook of Statistics on Indian States (2020), Reserve Bank of India (RBI) scraped from Vinod Kumar's "Trends and Patterns in Agriculture Credit in India" (2021) working paper. It gives the Region/State-wise Credit-Deposit Ratio of Scheduled Commercial Banks in India from 2005 to 2019.
 
+### For District-Wise standard of living
+I obtained Standard of Living Index percentages (low, medium, and high % of households) from the District Level Household and Facility Survey (DLHS-3). (https://data.gov.in/resource/standard-living-index-total-dlhs-iii) form 2008 as per their policy brief: https://rchiips.org/pdf/rch3/policy-brief.pdf 
+
 ### Wheat Suitability per district
 I use FAO's Global Agro-Ecological Zoning (GAEZ) database to find Output density (potential production divided by total grid cell area) for wheat. 
 
